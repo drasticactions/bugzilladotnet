@@ -56,5 +56,37 @@ namespace BugzillaDotNet.Manager
             var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
             return response.Bugs;
         }
+
+        public async Task<Entity.BugHistory.Bug> GetBugHistory(int id)
+        {
+            var url = string.Format(EndPoints.BugHistory, id);
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugHistoryResponse>(result.ResultJson);
+            return response.BugsHistory.FirstOrDefault();
+        }
+
+        public async Task<Entity.BugHistory.Bug> GetBugHistory(int id, DateTime newSince)
+        {
+            var url = string.Format(EndPoints.BugHistorySince, id, newSince.ToString("yyyy-MM-dd"));
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugHistoryResponse>(result.ResultJson);
+            return response.BugsHistory.FirstOrDefault();
+        }
+
+        public async Task<Entity.BugHistory.Bug> GetBugHistory(string alias)
+        {
+            var url = string.Format(EndPoints.BugHistory, alias);
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugHistoryResponse>(result.ResultJson);
+            return response.BugsHistory.FirstOrDefault();
+        }
+
+        public async Task<Entity.BugHistory.Bug> GetBugHistory(string alias, DateTime newSince)
+        {
+            var url = string.Format(EndPoints.BugHistorySince, alias, newSince.ToString("yyyy-MM-dd"));
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugHistoryResponse>(result.ResultJson);
+            return response.BugsHistory.FirstOrDefault();
+        }
     }
 }

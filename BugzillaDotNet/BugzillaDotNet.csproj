@@ -35,8 +35,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\EndPoints.cs" />
+    <Compile Include="Entity\BugHistory\Bug.cs" />
+    <Compile Include="Entity\BugHistory\Change.cs" />
+    <Compile Include="Entity\BugHistory\History.cs" />
     <Compile Include="Entity\Bugs\AssignedToDetail.cs" />
     <Compile Include="Entity\Bugs\Bug.cs" />
+    <Compile Include="Entity\Response\BugHistoryResponse.cs" />
     <Compile Include="Entity\Response\BugResponse.cs" />
     <Compile Include="Entity\Bugs\CcDetail.cs" />
     <Compile Include="Entity\Bugs\CreatorDetail.cs" />

@@ -19,10 +19,16 @@ namespace Bugzilla.Console
         {
             var webManager = new WebManager("https://landfill.bugzilla.org/bugzilla-5.0-branch");
             var bugManager = new BugManager(webManager);
-            var firstBug = await bugManager.GetBug(1);
-            var firstBugAlias = await bugManager.GetBug("Main");
-            var bugList = await bugManager.GetBugs(new [] {1, 2});
-            var bugListString = await bugManager.GetBugs(new[] { "Main", "en" });
+            //var firstBug = await bugManager.GetBug(1);
+            //var firstBugAlias = await bugManager.GetBug("Main");
+            //var bugList = await bugManager.GetBugs(new [] {1, 2});
+            //var bugListString = await bugManager.GetBugs(new[] { "Main", "en" });
+
+            //var firstBugHistory = await bugManager.GetBugHistory(1);
+            //var firstBugHistoryAlias = await bugManager.GetBugHistory("Main");
+
+            //var firstBugHistorySince = await bugManager.GetBugHistory(1, new DateTime(2003, 04, 01));
+            //var firstBugHistoryAliasSince = await bugManager.GetBugHistory("Main", new DateTime(2003, 04, 01));
         }
     }
 }
