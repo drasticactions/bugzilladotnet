@@ -21,6 +21,8 @@ namespace Bugzilla.Console
             var bugManager = new BugManager(webManager);
             var firstBug = await bugManager.GetBug(1);
             var firstBugAlias = await bugManager.GetBug("Main");
+            var bugList = await bugManager.GetBugs(new [] {1, 2});
+            var bugListString = await bugManager.GetBugs(new[] { "Main", "en" });
         }
     }
 }

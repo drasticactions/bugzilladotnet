@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using BugzillaDotNet.Common;
@@ -38,6 +39,22 @@ namespace BugzillaDotNet.Manager
             var result = await _webManager.GetData(url);
             var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
             return response.Bugs.FirstOrDefault();
+        }
+
+        public async Task<Bug[]> GetBugs(int[] ids)
+        {
+            var url = string.Format(EndPoints.BugsIds, string.Join(",", ids));
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
+            return response.Bugs;
+        }
+
+        public async Task<Bug[]> GetBugs(string[] aliasStrings)
+        {
+            var url = string.Format(EndPoints.BugsAlias, string.Join(",", aliasStrings));
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
+            return response.Bugs;
         }
     }
 }

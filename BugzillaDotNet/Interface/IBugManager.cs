@@ -12,5 +12,9 @@ namespace BugzillaDotNet.Interface
         Task<Bug> GetBug(int id);
 
         Task<Bug> GetBug(string alias);
+
+        Task<Bug[]> GetBugs(int[] ids);
+
+        Task<Bug[]> GetBugs(string[] aliasStrings);
     }
 }
