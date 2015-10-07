@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BugzillaDotNet.Entity.Bugs;
+using BugzillaDotNet.Entity.User;
 using BugzillaDotNet.Manager;
 
 namespace Bugzilla.Console
@@ -19,7 +20,16 @@ namespace Bugzilla.Console
         static async Task MainAsync(string[] args)
         {
             var webManager = new WebManager("https://landfill.bugzilla.org/bugzilla-5.0-branch");
-            var bugManager = new BugManager(webManager);
+            var userManager = new UserManager(webManager);
+            //var id = await userManager.CreateUser(new NewUser()
+            //{
+            //    FullName = "Test User #34343",
+            //    Email = "testemail@mailinator.com",
+            //    Password = "1234567890"
+            //});
+            //var login = await userManager.Login("testemail@mailinator.com", "1234567890");
+
+            //var bugManager = new BugManager("https://landfill.bugzilla.org/bugzilla-5.0-branch", login.Token);
             //var searchBug =
             //    await
             //        bugManager.SearchBugs(

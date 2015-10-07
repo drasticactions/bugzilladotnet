@@ -48,11 +48,15 @@
     <Compile Include="Entity\Bugs\CcDetail.cs" />
     <Compile Include="Entity\Bugs\CreatorDetail.cs" />
     <Compile Include="Entity\Bugs\Flag.cs" />
+    <Compile Include="Entity\User\NewUser.cs" />
+    <Compile Include="Entity\User\UserResponse.cs" />
     <Compile Include="Entity\Web\Result.cs" />
     <Compile Include="Exception\ManagerException.cs" />
     <Compile Include="Interface\IBugManager.cs" />
+    <Compile Include="Interface\IUserManager.cs" />
     <Compile Include="Interface\IWebManager.cs" />
     <Compile Include="Manager\BugManager.cs" />
+    <Compile Include="Manager\UserManager.cs" />
     <Compile Include="Manager\WebManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

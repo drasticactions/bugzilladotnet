@@ -21,5 +21,13 @@ namespace BugzillaDotNet.Common
         public static string BugSearch = "/rest/bug?{0}";
 
         public static string CreateBug = "/rest/bug";
+
+        public static string Login = "/rest/login?login={0}&password={1}";
+
+        public static string Logout = "/rest/logout?token={0}";
+
+        public static string ValidLogin = "/rest/valid_login?login={0}&token={1}";
+
+        public static string User = "/rest/user";
     }
 }
