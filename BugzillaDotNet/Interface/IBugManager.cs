@@ -27,5 +27,7 @@ namespace BugzillaDotNet.Interface
         Task<Entity.BugHistory.Bug> GetBugHistory(string alias, DateTime newSince);
 
         Task<Bug[]> SearchBugs(string query);
+
+        Task<int> CreateBug(NewBug newBug);
     }
 }

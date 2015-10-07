@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BugzillaDotNet.Entity.Bugs;
 using BugzillaDotNet.Manager;
 
 namespace Bugzilla.Console
@@ -19,10 +20,19 @@ namespace Bugzilla.Console
         {
             var webManager = new WebManager("https://landfill.bugzilla.org/bugzilla-5.0-branch");
             var bugManager = new BugManager(webManager);
-            var searchBug =
-                await
-                    bugManager.SearchBugs(
-                        "bug_status=VERIFIED&classification=Mercury&order=Importance&product=WorldControl");
+            //var searchBug =
+            //    await
+            //        bugManager.SearchBugs(
+            //            "bug_status=VERIFIED&classification=Mercury&order=Importance&product=WorldControl");
+            //var newBug = new NewBug
+            //{
+            //    Product = "WorldControl",
+            //    Component = "WeatherControl",
+            //    Summary = "NEW TEST",
+            //    Version = "1.0"
+            //};
+            //var bugId = await bugManager.CreateBug(newBug);
+            //var newBugSearch = await bugManager.GetBug(bugId);
             //var firstBug = await bugManager.GetBug(1);
             //var firstBugAlias = await bugManager.GetBug("Main");
             //var bugList = await bugManager.GetBugs(new [] {1, 2});

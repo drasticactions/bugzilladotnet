@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using BugzillaDotNet.Common;
 using BugzillaDotNet.Entity.Bugs;
 using BugzillaDotNet.Entity.Response;
 using BugzillaDotNet.Interface;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 namespace BugzillaDotNet.Manager
@@ -95,6 +97,13 @@ namespace BugzillaDotNet.Manager
             var result = await _webManager.GetData(url);
             var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
             return response.Bugs;
+        }
+
+        public async Task<int> CreateBug(NewBug newBug)
+        {
+            var result = await _webManager.PostData(EndPoints.CreateBug, new StringContent(JsonConvert.SerializeObject(newBug), Encoding.UTF8, "application/json"));
+            var response = JsonConvert.DeserializeObject<NewBugResponse>(result.ResultJson);
+            return response.Id;
         }
     }
 }
