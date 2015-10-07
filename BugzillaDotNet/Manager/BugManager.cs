@@ -88,5 +88,13 @@ namespace BugzillaDotNet.Manager
             var response = JsonConvert.DeserializeObject<BugHistoryResponse>(result.ResultJson);
             return response.BugsHistory.FirstOrDefault();
         }
+
+        public async Task<Bug[]> SearchBugs(string query)
+        {
+            var url = string.Format(EndPoints.BugSearch, query);
+            var result = await _webManager.GetData(url);
+            var response = JsonConvert.DeserializeObject<BugResponse>(result.ResultJson);
+            return response.Bugs;
+        }
     }
 }

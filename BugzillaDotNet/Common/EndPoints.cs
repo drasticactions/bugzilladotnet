@@ -17,5 +17,7 @@ namespace BugzillaDotNet.Common
         public static string BugsIds = "/rest/bug?id={0}";
 
         public static string BugsAlias = "/rest/bug?alias={0}";
+
+        public static string BugSearch = "/rest/bug?{0}";
     }
 }

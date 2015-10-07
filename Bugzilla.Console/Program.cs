@@ -19,6 +19,10 @@ namespace Bugzilla.Console
         {
             var webManager = new WebManager("https://landfill.bugzilla.org/bugzilla-5.0-branch");
             var bugManager = new BugManager(webManager);
+            var searchBug =
+                await
+                    bugManager.SearchBugs(
+                        "bug_status=VERIFIED&classification=Mercury&order=Importance&product=WorldControl");
             //var firstBug = await bugManager.GetBug(1);
             //var firstBugAlias = await bugManager.GetBug("Main");
             //var bugList = await bugManager.GetBugs(new [] {1, 2});
